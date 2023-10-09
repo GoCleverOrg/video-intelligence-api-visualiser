@@ -160,7 +160,6 @@ import FaceDetectionViz from "./components/FaceDetectionViz.vue";
 import LogoRecognitionViz from "./components/LogoRecognitionViz.vue";
 import TextDetectionViz from "./components/TextDetectionViz.vue";
 import ExplicitContentDetectionViz from "./components/ExplicitContentDetectionViz.vue";
-import AnnotationsNavTab from "./components/AnnotationsNavTab.vue";
 import AnnotationsNav from "./components/AnnotationsNav.vue";
 
 export default {
