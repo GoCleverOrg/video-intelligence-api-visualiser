@@ -6,7 +6,6 @@
         type="range"
         min="0.0"
         max="1"
-        value="0.5"
         step="0.01"
         v-model="confidence_threshold"
       />

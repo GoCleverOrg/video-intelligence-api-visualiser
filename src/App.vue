@@ -151,15 +151,15 @@ import {
 } from "./utils/videoUtils";
 
 import "./utils/utils.js";
-import ObjectTrackingViz from "./components/object_tracking";
-import LabelDetectionViz from "./components/label_detection";
-import ShotDetectionViz from "./components/shot_detection";
-import SpeechTranscriptionViz from "./components/speech_transcription";
-import PersonDetectionViz from "./components/person_detection";
-import FaceDetectionViz from "./components/face_detection";
-import LogoRecognitionViz from "./components/logo_recognition";
-import TextDetectionViz from "./components/text_detection";
-import ExplicitContentDetectionViz from "./components/explicit_content_detection";
+import ObjectTrackingViz from "./components/ObjectTrackingViz.vue";
+import LabelDetectionViz from "./components/LabelDetectionViz.vue";
+import ShotDetectionViz from "./components/ShotDetectionViz.vue";
+import SpeechTranscriptionViz from "./components/SpeechTranscriptionViz.vue";
+import PersonDetectionViz from "./components/PersonDetectionViz.vue";
+import FaceDetectionViz from "./components/FaceDetectionViz.vue";
+import LogoRecognitionViz from "./components/LogoRecognitionViz.vue";
+import TextDetectionViz from "./components/TextDetectionViz.vue";
+import ExplicitContentDetectionViz from "./components/ExplicitContentDetectionViz.vue";
 import AnnotationsNavTab from "./components/AnnotationsNavTab.vue";
 import AnnotationsNav from "./components/AnnotationsNav.vue";
 

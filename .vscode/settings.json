@@ -1,0 +1,13 @@
+{
+    "vetur.validation.template": false,
+    "vetur.experimental.templateInterpolationService": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "vue"
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  }
+  
