@@ -1,0 +1,38 @@
+{
+  "name": "video-intelligence-api-visualiser",
+  "version": "1.0.0",
+  "description": "An app that visualises annotations from the [Google Cloud Video Intelligence API](https://cloud.google.com/video-intelligence?utm_source=ext&utm_medium=partner&utm_campaign=CDR_zac_aiml_vid_intel_demo_interactive%20demo_060221&utm_content=-).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoCleverOrg/video-intelligence-api-visualiser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoCleverOrg/video-intelligence-api-visualiser/issues"
+  },
+  "homepage": "https://github.com/GoCleverOrg/video-intelligence-api-visualiser#readme",
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "vue-loader": "^17.3.0",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.7.14",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
