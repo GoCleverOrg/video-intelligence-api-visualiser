@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "johnsoncodehk.volar", // Vetur provides Vue tooling support
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
     "dbaeumer.vscode-eslint", // Integrates ESLint with VSCode
     "esbenp.prettier-vscode", // Prettier code formatter
     "orta.vscode-jest", // Jest test runner
