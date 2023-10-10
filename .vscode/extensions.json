@@ -3,5 +3,7 @@
     "johnsoncodehk.volar", // Vetur provides Vue tooling support
     "dbaeumer.vscode-eslint", // Integrates ESLint with VSCode
     "esbenp.prettier-vscode", // Prettier code formatter
+    "orta.vscode-jest", // Jest test runner
+    "ms-vscode-remote.remote-containers", // Remote development in containers
   ]
 }

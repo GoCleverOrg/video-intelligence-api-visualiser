@@ -7,9 +7,32 @@
       "name": "vuejs: chrome",
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}/src",
-      "runtimeArgs": ["--inspect-brk"],
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"
+      }
+    },
+    {
+      "type": "node",
+      "name": "Jest All",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
+    },
+    {
+      "type": "node",
+      "name": "Jest Current File",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["${relativeFile}", "--config", "jest.config.js", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
     }
   ]

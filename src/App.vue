@@ -11,39 +11,21 @@
 
     <div id="video-conatiner">
       <canvas id="my_canvas" width="800" height="500"></canvas>
-      <!-- video id="video" controls autoplay></video -->
-      <video ref="video" @canplay="handleVideoCanPlay" @drop="handleVideoDrop" @dragover="drag_enter"></video>
+      <!-- autoplay -->
+      <video controls ref="video" @canplay="handleVideoCanPlay"></video>
     </div>
 
     <div id="upload-data">
       <h5>Select one of the followings videos</h5>
 
       <ul>
-        <li
-          onclick='load("Machine%20Learning%20Solving%20Problems%20Big%2C%20Small%2C%20and%20Prickly.mp4")'
-        >
-          Machine%20Learning%20Solving%20Problems%20Big%2C%20Small%2C%20and%20Prickly.mp4
+        <li>
+          <a
+            onclick='load("Machine%20Learning%20Solving%20Problems%20Big%2C%20Small%2C%20and%20Prickly.mp4")'
+            >Machine%20Learning%20Solving%20Problems%20Big%2C%20Small%2C%20and%20Prickly.mp4</a
+          >
         </li>
       </ul>
-
-      <div
-        class="upload-area"
-        ondrop="drop_video(event)"
-        ondragover="drag_enter(event)"
-      >
-        <p>Your video</p>
-        <input ref="videoInput" type="file" @change="handleVideoInput" @drop="handleVideoDrop" @dragover="drag_enter" />
-        <!-- input id="video_input" type="file" accept="video/*" / -->
-      </div>
-      <div
-        class="upload-area"
-        ondrop="drop_json(event)"
-        ondragover="drag_enter(event)"
-      >
-        <p>Your .json</p>
-        <input ref="jsonInput" type="file" @change="handleJsonInput" @drop="handleJsonDrop" @dragover="drag_enter" />
-        <!-- input id="json_input" type="file" accept="application/JSON" / -->
-      </div>
     </div>
 
     <div v-if="data_misaligned" class="data-warning">
@@ -59,7 +41,7 @@
     >
     </annotations-nav>
 
-    <object-tracking-viz
+    <!-- object-tracking-viz
       v-if="current_view == 'Object Tracking'"
       id="object_tracks"
       v-bind:json_data="json_data"
@@ -135,11 +117,11 @@
       v-bind:video_info="video_info"
       v-on:shot-clicked="jump_video"
     >
-    </explicit-content-detection-viz>
+    </explicit-content-detection-viz-->
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   fetch_json,
   load_video_from_url,
@@ -163,6 +145,18 @@ import ExplicitContentDetectionViz from "./components/ExplicitContentDetectionVi
 import AnnotationsNav from "./components/AnnotationsNav.vue";
 
 export default {
+  components: {
+    AnnotationsNav,
+    ObjectTrackingViz,
+    LabelDetectionViz,
+    ShotDetectionViz,
+    SpeechTranscriptionViz,
+    PersonDetectionViz,
+    FaceDetectionViz,
+    LogoRecognitionViz,
+    TextDetectionViz,
+    ExplicitContentDetectionViz,
+  },
   data() {
     return {
       json_data: {},
@@ -212,6 +206,21 @@ export default {
       const jsonInputElement = this.$refs.jsonInput;
       drop_json(event, jsonInputElement);
     },
+    load_json_from_url(url) {
+      const jsonData = fetch_json_url(url);
+      this.json_data = jsonData;
+
+      if (!("annotation_results" in json_data)) {
+        alert(
+          "❌ Format of json is not compatible, make sure you are setting the 'output_uri' \
+configuration when calling the Video Intelligence API so that it \
+outputs a .json file direction to Google Cloud Storage. \
+Find links to script examples at the top right of the screen."
+        );
+
+        json_input.value = null;
+      }
+    },
   },
   mounted() {
     const videoElement = this.$refs.video;
@@ -221,8 +230,8 @@ export default {
     };
 
     // Initialization
-    load_json_from_url("assets/test_json.json");
-    load_video_from_url(videoElement, "assets/test_video.mp4");
+    // load_json_from_url(this.json_data, "assets/test_json.json");
+    // load_video_from_url(videoElement, "assets/test_video.mp4");
 
     // Check for hash code in URL
     if (this.$route.hash) {
@@ -233,7 +242,7 @@ export default {
     }
   },
   computed: {
-    data_misaligned: function () {
+    data_misaligned() {
       console.log("delt");
       if (this.json_data)
         if (this.json_data.annotation_results) {
@@ -248,7 +257,7 @@ export default {
         }
       return false;
     },
-    detected_features: function () {
+    detected_features() {
       let features = [];
 
       if (!this.json_data.annotation_results) return features;

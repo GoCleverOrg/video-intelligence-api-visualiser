@@ -14,7 +14,12 @@
 </template>
 
 <script>
+import AnnotationsNavTab from "./AnnotationsNavTab.vue";
+
 export default {
+  components: {
+    AnnotationsNavTab,
+  },
   name: "AnnotationsNav",
   props: ["title_ids_dict", "current_view", "detected_features"],
   methods: {

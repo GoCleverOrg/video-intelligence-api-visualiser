@@ -16,11 +16,11 @@
       No label data in JSON
     </div>
 
-    <div class="current_labels">
+    <!-- div class="current_labels">
       <p>Current labels:</p>
       <div
         v-for="label in indexed_detected_labels"
-        :key="label.name"
+        v-bind:key="label.name"
         v-if="label_on_screen(label)"
       >
         {{ label.name }}
@@ -43,7 +43,7 @@
           ></div>
         </div>
       </div>
-    </transition-group>
+    </transition-group -->
   </div>
 </template>
 
