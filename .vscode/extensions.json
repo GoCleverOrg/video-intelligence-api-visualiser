@@ -5,5 +5,8 @@
     "esbenp.prettier-vscode", // Prettier code formatter
     "orta.vscode-jest", // Jest test runner
     "ms-vscode-remote.remote-containers", // Remote development in containers
+    "github.copilot",
+    "github.copilot-chat",
+    "github.vscode-pull-request-github",
   ]
 }
